@@ -4,8 +4,8 @@ class Airport {
     this.name = name;
   }
 
-   land () {
-  return "plane";
+   land (plane) {
+  return plane;
 }
 };
 
