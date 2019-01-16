@@ -3,6 +3,7 @@ class Airport {
   constructor(name) {
     this.name = name;
     this.plane = 0;
+    this.capacity = 1;
   }
 
    land (plane) {

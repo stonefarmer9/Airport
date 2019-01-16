@@ -13,3 +13,8 @@ test('the airport allows a plane to take off', () =>{
   airport.land(plane)
   expect(airport.takeOff()).toBe(0);
 });
+
+test('the airport has a default capacity of 1 when constructed', () => {
+  bath = new Airport('Bath')
+  expect(bath.capacity).toBe(1)
+})
