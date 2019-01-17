@@ -1,17 +1,19 @@
 
 class Airport {
-  constructor(name) {
+  constructor(name, capacity = 1) {
     this.name = name;
     this.hangar = [];
-    this.capacity = 1;
+    this.capacity = capacity;
   }
 
    land (plane) {
-   return this.hangar.push(plane).length();
-}
+     this.hangar.push(plane);
+     return this.hangar.length
+};
 
   takeOff () {
-    return this.hangar.pop().length();
+   this.hangar.pop()
+   return this.hangar.length;
   }
 };
 

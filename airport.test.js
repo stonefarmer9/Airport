@@ -6,11 +6,10 @@ plane = new Plane('Boeing 747')
 
 
 test('the airport lands a plane', () => {
-  expect(airport.land(plane)).toBe(plane);
+  expect(airport.land(plane)).toBe(1);
 });
 
 test('the airport allows a plane to take off', () =>{
-  airport.land(plane)
   expect(airport.takeOff()).toBe(0);
 });
 
