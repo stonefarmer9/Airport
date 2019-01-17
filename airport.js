@@ -7,7 +7,7 @@ class Airport {
   }
 
    land (plane) {
-     if (this.hangar.length < this.capacity) {
+     if (this._isFull() === false) {
        this.hangar.push(plane)
      return this.hangar.length
    } else {
@@ -19,7 +19,16 @@ class Airport {
   takeOff () {
    this.hangar.pop()
    return this.hangar.length;
-  }
+ };
+
+  _isFull () {
+   if (this.hangar.length < this.capacity) {
+     return false
+   } else {
+     return true
+   }
+  };
+
 };
 
 module.exports = Airport;
