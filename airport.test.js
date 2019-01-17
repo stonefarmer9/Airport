@@ -18,3 +18,8 @@ test('the airport has a default capacity of 1 when constructed', () => {
   bath = new Airport('Bath')
   expect(bath.capacity).toBe(1)
 })
+
+test('The airports default capacity can be defined at construction', () => {
+  bristol = new Airport('Bristol', 5)
+  expect(bristol.capacity).toBe(5)
+});
