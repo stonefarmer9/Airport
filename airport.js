@@ -7,9 +7,14 @@ class Airport {
   }
 
    land (plane) {
-     this.hangar.push(plane);
+     if (this.hangar.length < this.capacity) {
+       this.hangar.push(plane)
      return this.hangar.length
-};
+   } else {
+     return 'HANGAR FULL LANDING DENIED'
+   }
+   };
+
 
   takeOff () {
    this.hangar.pop()

@@ -24,8 +24,8 @@ test('The airports default capacity can be defined at construction', () => {
 });
 
 test("The airport doesn't let you land when the hangar is full", () => {
-  wells = new Airport('Wells' 1)
+  wells = new Airport('Wells', 1)
   plane2 = new Plane('Spitfire')
   wells.land(plane)
-  expect(wells.land(plane2)).toThrow('HANGAR FULL LANDING DENIED')
+  expect(wells.land(plane2)).toBe('HANGAR FULL LANDING DENIED')
 });
