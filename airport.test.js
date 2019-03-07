@@ -1,8 +1,8 @@
 const Airport = require('./airport')
 const Plane = require('./plane')
 const Weather = require('./weather')
-
 jest.mock('./weather');
+
 
 airport = new Airport('Bristol')
 plane = new Plane('Boeing 747')
@@ -32,10 +32,12 @@ test("The airport doesn't let you land when the hangar is full", () => {
   wells.land(plane)
   expect(wells.land(plane2)).toBe('HANGAR FULL LANDING DENIED')
 });
+describe("Stormy weather", () => {
 
 test("The airport doesn't let you land when weather is stormy", () =>{
-  york = new Airport('york', 1)
-  york.weather = true
+  york = new Airport('york', 1, { getWeather: () => true })
   plane = new Plane('plane')
   expect(york.land(plane)).toEqual('LANDING DENIED POOR WEATHER')
 });
+
+})
