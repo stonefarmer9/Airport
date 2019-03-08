@@ -62,7 +62,7 @@ I approached this in the same manner as the original challenge. The big differen
 
 ### Notes for the future
 
- - Considering this projects role as a learing exercise if complete and I now feel cvery confident with Javascript it is unlikely I will put any more time into this repo.
+ - Considering this projects role as a learning exercise is complete and I now feel very confident with Javascript it is unlikely I will put any more time into this repo.
 
  - Potential work :
     - land needs to be shortened via extracting the if/else - have plated with some ideas of this.LandingCleared variables to control it but to no avail yet.
