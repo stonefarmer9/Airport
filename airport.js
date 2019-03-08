@@ -11,13 +11,13 @@ class Airport {
 
    land (plane) {
      if (this._isStormy() === true) {
-       return 'LANDING DENIED POOR WEATHER'
-     } else if (this._isFull() === false) {
-       this.hangar.push(plane)
+       throw 'LANDING DENIED POOR WEATHER'
+     } else if (this._isFull() === true) {
+       throw 'HANGAR FULL LANDING DENIED'
+     } else {
+     this.hangar.push(plane)
      return this.hangar.length
-   } else {
-     return 'HANGAR FULL LANDING DENIED'
-   }
+    }
    };
 
 
@@ -35,7 +35,7 @@ class Airport {
   };
 
   _isStormy () {
-    this.weather === true ? true : false
+    return (this.weather === true ? true : false)
   }
 
 };
