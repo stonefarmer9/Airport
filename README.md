@@ -66,6 +66,7 @@ I approached this in the same manner as the original challenge. The big differen
 
  - Potential work :
     - land needs to be shortened via extracting the if/else - have plated with some ideas of this.LandingCleared variables to control it but to no avail yet.
+    - I would update the gitignore to remove both coverage and node modules from github.
 
 - Potential test work:
       - more edge cases could be tested for perhaps, such as landing multiple planes at once. Changing weather etc.
