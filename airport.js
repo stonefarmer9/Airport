@@ -15,8 +15,7 @@ class Airport {
      } else if (this._isFull() === true) {
        throw 'HANGAR FULL LANDING DENIED'
      } else {
-     this.hangar.push(plane)
-     return this.hangar.length
+       return(this._landPlane(plane))
     }
    };
 
@@ -27,12 +26,15 @@ class Airport {
  };
 
   _isFull () {
-    console.log(`got to _isFull ${this.hangar.length} ${this.capacity}`);
     return (this.hangar.length < this.capacity ? true : false)
   };
 
   _isStormy () {
     return (this.weather === true ? true : false)
+  }
+
+  _landPlane(plane){
+    this.hangar.push(plane)
   }
 
 };
