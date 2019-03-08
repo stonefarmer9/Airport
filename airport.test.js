@@ -3,13 +3,20 @@ const Plane = require('./plane')
 const Weather = require('./weather')
 jest.mock('./weather');
 
+  let airport;
+  let plane;
 
-airport = new Airport('Bristol')
-plane = new Plane('Boeing 747')
+describe('The Airport', ()=> {
 
+
+beforeEach(() => {
+  airport = new Airport('Bristol', { getWeather: () => false })
+  plane = new Plane('Boeing 747')
+})
 
 test('the airport lands a plane', () => {
-  expect(airport.land(plane)).toBe(1);
+  airport.land(plane)
+  expect(airport.hangar.length).toBe(1);
 });
 
 test('the airport allows a plane to take off', () =>{
@@ -26,23 +33,22 @@ test('The airports default capacity can be defined at construction', () => {
   expect(bristol.capacity).toBe(5)
 });
 
-test("The airport doesn't let you land when the hangar is full", () => {
-  wells = new Airport('Wells', 1)
-  plane2 = new Plane('Spitfire')
-  wells.land(plane)
-  expect(() => {
-    wells.land(plane2).toThrow();
-  });
-})
-describe("Stormy weather", () => {
+
+describe("Landing Denied", () => {
+  let york;
+  let plane;
+
+  beforeEach(() => {
+    york = new Airport('york', 1, { getWeather: () => true })
+    plane = new Plane('spitfire')
+  })
 
 test("The airport doesn't let you land when weather is stormy", () =>{
-  york = new Airport('york', 1, { getWeather: () => true })
-  plane = new Plane('plane')
 
   expect(() => {
     york.land(plane).toThrow();
   })
 });
 
+})
 })
