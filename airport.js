@@ -12,7 +12,7 @@ class Airport {
    land (plane) {
      if (this._isStormy() === true) {
        throw 'LANDING DENIED POOR WEATHER'
-     } else if (this._isFull() === true) {
+     } else if (this._isFull() === false) {
        throw 'HANGAR FULL LANDING DENIED'
      } else {
        return(this._landPlane(plane))

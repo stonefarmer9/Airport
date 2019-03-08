@@ -10,22 +10,24 @@ describe('The Airport', ()=> {
 
 
 beforeEach(() => {
-  airport = new Airport('Bristol', { getWeather: () => false })
+  airport = new Airport('Bristol', 1, { getWeather: () => false })
   plane = new Plane('Boeing 747')
 })
 
 test('the airport lands a plane', () => {
   airport.land(plane)
+
   expect(airport.hangar.length).toBe(1);
 });
 
 test('the airport allows a plane to take off', () =>{
-  expect(airport.takeOff()).toBe(0);
+  airport.takeOff()
+  expect(airport.hangar.length).toBe(0);
 });
 
 test('the airport has a default capacity of 1 when constructed', () => {
-  bath = new Airport('Bath')
-  expect(bath.capacity).toBe(1)
+
+  expect(airport.capacity).toBe(1)
 })
 
 test('The airports default capacity can be defined at construction', () => {
