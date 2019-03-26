@@ -29,7 +29,7 @@ class Airport {
   };
 
   _isStormy () {
-    return (this.weather === true ? true : false)
+    return this.weather === true
   }
 
   _landPlane(plane){
