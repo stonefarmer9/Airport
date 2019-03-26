@@ -22,7 +22,6 @@ class Airport {
 
   takeOff () {
    this.hangar.pop()
-   return this.hangar.length;
  };
 
   _isFull () {
