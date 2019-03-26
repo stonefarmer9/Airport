@@ -10,13 +10,9 @@ class Airport {
   }
 
    land (plane) {
-     if (this._isStormy() === true) {
-       throw 'LANDING DENIED POOR WEATHER'
-     } else if (this._isFull() === false) {
-       throw 'HANGAR FULL LANDING DENIED'
-     } else {
-       return(this._landPlane(plane))
-    }
+     this._isStormy();
+     this._isFull();
+     this._landPlane(plane)
    };
 
 
@@ -25,11 +21,15 @@ class Airport {
  };
 
   _isFull () {
-    return this.hangar.length < this.capacity
+    if (this.hangar.length >= this.capacity){
+    throw 'HANGAR FULL LANDING DENIED'
+    }
   };
 
   _isStormy () {
-    return this.weather === true
+    if (this.weather === true) {
+      throw 'LANDING DENIED POOR WEATHER'
+    }
   }
 
   _landPlane(plane){
