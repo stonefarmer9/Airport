@@ -25,7 +25,7 @@ class Airport {
  };
 
   _isFull () {
-    return (this.hangar.length < this.capacity ? true : false)
+    return this.hangar.length < this.capacity
   };
 
   _isStormy () {
